@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'YEONGJUSeonbiTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2403@1.0/YEONGJUSeonbiTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: YEONGJUSeonbiTTF;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(249, 234, 234);
+}
+
+#top-area {
+    position: absolute;
+    top: 18vh;
+    width: 100%;
+    text-align: center;
+}
+h1 {
+    font-size: 5vh;
+}
+
+#bin-area, #trash-area {
+    position: absolute;
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bin-area {
+    top: 27vh;
+    height: 25vh;
+    background-color: rgb(249, 234, 234);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#trash-area {
+    top: 53vh;
+    width: 60vh;
+    height: 15vh;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1.1vh;
+    border-radius: 7vh 1vh 5vh 1vh;
+    border-color: rgb(250,92,61) rgb(134,195,124) rgb(105,168,230);
+    /*border-color: rgb(63, 55, 55);*/
+}
+.trash {
+    text-align: center;
+    width: 10vh;
+    height: 10vh;
+    line-height: 100px;
+    cursor: pointer;
+    margin: 0 0.5vh; 
+}
+
+.bin-trash-area {
+    position: relative;
+    background-color: rgb(249, 234, 234); /*#f9eaea*/
+    width: 30vh; 
+    height: 100%; 
+    margin: 0 1%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#bin-trash-area1{
+    background-image: url("./bin1_stand.gif");
+}
+#bin-trash-area1.active {
+    background-image: url("./bin1.gif");
+}
+
+#bin-trash-area2{
+    background-image: url("./bin2_stand.gif");
+}
+#bin-trash-area2.active {
+    background-image: url("./bin2.gif");
+}
+
+#bin-trash-area3{
+    background-image: url("./bin3_stand.gif");
+}
+#bin-trash-area3.active {
+    background-image: url("./bin3.gif");
+}
+
+.bin-trash-area .trash {
+    position: absolute;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border-radius: 5px;
+    font-size: 2vh;
+    display: none;
+    pointer-events: none;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);}
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
